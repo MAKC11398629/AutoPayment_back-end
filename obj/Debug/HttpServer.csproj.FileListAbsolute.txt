@@ -1,0 +1,5 @@
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\obj\Debug\Kontur.ImageTransformer.exe
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\obj\Debug\Kontur.ImageTransformer.pdb
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\bin\Debug\Kontur.ImageTransformer.exe.config
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\bin\Debug\Kontur.ImageTransformer.exe
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\bin\Debug\Kontur.ImageTransformer.pdb

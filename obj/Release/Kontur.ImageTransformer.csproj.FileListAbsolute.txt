@@ -1,0 +1,6 @@
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\bin\Release\Kontur.ImageTransformer.exe.config
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\bin\Release\Kontur.ImageTransformer.exe
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\bin\Release\Kontur.ImageTransformer.pdb
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\obj\Release\Kontur.ImageTransformer.exe
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\obj\Release\Kontur.ImageTransformer.pdb
+C:\1\Kontur.ex.ex\Kontur.ImageTransformer\obj\Release\Kontur.ImageTransformer.csprojResolveAssemblyReference.cache
