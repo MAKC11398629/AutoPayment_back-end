@@ -8,12 +8,12 @@ namespace Http.Server
 {
     internal class AsyncHttpServer : IDisposable
     {
-        
+
         public AsyncHttpServer()
         {
             listener = new HttpListener();
         }
-        
+
         public void Start(string prefix)
         {
             Console.WriteLine("Server started at prefix " + prefix);
@@ -31,7 +31,7 @@ namespace Http.Server
                         Priority = ThreadPriority.Highest
                     };
                     listenerThread.Start();
-                    
+
                     isRunning = true;
                 }
             }
@@ -48,7 +48,7 @@ namespace Http.Server
 
                 listenerThread.Abort();
                 listenerThread.Join();
-                
+
                 isRunning = false;
             }
         }
@@ -64,7 +64,7 @@ namespace Http.Server
 
             listener.Close();
         }
-        
+
         private void Listen()
         {
             while (true)
@@ -74,7 +74,7 @@ namespace Http.Server
                     if (listener.IsListening)
                     {
                         var context = listener.GetContext();
-                        Task.Run(() =>  HandleContextAsync(context));
+                        Task.Run(() => HandleContextAsync(context));
                     }
                     else Thread.Sleep(0);
                 }
@@ -84,25 +84,26 @@ namespace Http.Server
                 }
                 catch (Exception error)
                 {
-                    Console.WriteLine("error: {0}",error.Message.ToString());
-                    // TODO: log errors
+                    Console.WriteLine("error: {0}", error.Message.ToString());
                 }
             }
-        } 
+        }
 
         private async Task HandleContextAsync(HttpListenerContext listenerContext)
         {
-            // TODO: implement request handling
+        // TODO: implement request handling
 
             Console.WriteLine("has new request!");
 
-                    Request request = Request.Get(listenerContext.Request.Url.ToString());
+            Request request = Request.Get(listenerContext.Request.Url.ToString());
 
-                    Response response = Response.GetResponse(request.GetRequestString());
+            Response response = Response.GetResponse(request.GetRequestString());
 
-                    listenerContext.Response.StatusCode = response.GetStatus();
-                    response.writeData(listenerContext.Response.OutputStream);
-                
+            listenerContext.Response.StatusCode = response.GetStatus();
+
+
+            response.writeData(listenerContext.Response.OutputStream);
+            
 
         }
 

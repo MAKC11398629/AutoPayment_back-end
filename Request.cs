@@ -24,8 +24,6 @@ namespace Http.Server
 
         public static Request Get(string uri)
         {
-         
-
                 Console.WriteLine("i have new request object! from uri: " + uri);
             string strData = uri;
          

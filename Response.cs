@@ -21,7 +21,6 @@ namespace Http.Server
         public static Response GetResponse(string data)
         {
                 return new Response(data, 200); // 200 - OK
-
         }
         public int GetStatus()
         {
@@ -30,10 +29,17 @@ namespace Http.Server
 
         public void writeData(Stream outputStream)
         {
-            Console.WriteLine("Data written to client int thread: {0}, Data Length: {1}",Task.CurrentId, postData.Length);
+            Console.WriteLine("The image has been written to client");
+            String path = @"C:\1\Leh_projs\AutoPayment_back-end\image.jpg";
+            FileStream ss = new FileStream(path, FileMode.Open);
             using (BinaryWriter bw = new BinaryWriter(outputStream))
             {
-                bw.Write(postData);
+                byte[] array;
+                using (BinaryReader br = new BinaryReader(ss))
+                {
+                    array = br.ReadBytes( (int)ss.Length);
+                }
+                    bw.Write(array);
             }
         }
 
